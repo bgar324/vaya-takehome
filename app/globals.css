@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #eef3f8;
+  --background: #ffffff;
   --foreground: #162235;
   --surface: rgba(255, 255, 255, 0.86);
   --border: rgba(148, 163, 184, 0.34);
@@ -19,6 +19,7 @@
 body {
   min-height: 100vh;
   background: var(--background);
+  background-image: none;
   color: var(--foreground);
   font-family: var(--font-body), "Segoe UI", sans-serif;
 }

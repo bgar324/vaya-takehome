@@ -417,19 +417,19 @@ export default function MentionBox() {
 
   return (
     <div ref={rootRef} className="relative">
-      <div className="relative overflow-hidden rounded-[1.35rem] border border-slate-200/80 bg-white/85 shadow-[0_26px_70px_-38px_rgba(15,23,42,0.65)] backdrop-blur-sm">
-        <div className="flex items-center justify-between border-b border-slate-200/70 bg-white/55 px-4 py-2.5">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+      <div className="relative overflow-hidden rounded-[1.35rem] border border-slate-200/80 bg-white/85 shadow-[0_26px_70px_-38px_rgba(15,23,42,0.65)] backdrop-blur-sm transition-colors duration-200">
+        <div className="flex items-center justify-between border-b border-slate-200/70 bg-white/55 px-4 py-2.5 transition-colors duration-200">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 transition-colors duration-200">
             Message
           </span>
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">
+          <div className="flex items-center gap-1.5 text-[11px] text-slate-500 transition-colors duration-200">
+            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600 transition-colors duration-200">
               ↑↓
             </kbd>
-            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">
+            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600 transition-colors duration-200">
               Enter
             </kbd>
-            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">
+            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600 transition-colors duration-200">
               Tab
             </kbd>
           </div>
@@ -475,14 +475,14 @@ export default function MentionBox() {
                 hiRef.current.scrollLeft = e.currentTarget.scrollLeft;
               }
             }}
-            className="absolute inset-0 h-52 w-full resize-none bg-transparent px-4 py-3.5 text-[15px] leading-7 text-slate-900 caret-sky-700 outline-none placeholder:text-slate-400"
+            className="absolute inset-0 h-52 w-full resize-none bg-transparent px-4 py-3.5 text-[15px] leading-7 text-slate-900 caret-sky-700 outline-none placeholder:text-slate-400 transition-colors duration-200"
           />
         </div>
       </div>
 
       {open && results.length > 0 && (
         <div
-          className="mention-pop absolute z-20 w-80 overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 shadow-[0_30px_68px_-34px_rgba(15,23,42,0.55)] backdrop-blur"
+          className="mention-pop absolute z-20 w-80 overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 shadow-[0_30px_68px_-34px_rgba(15,23,42,0.55)] backdrop-blur transition-colors duration-200"
           style={{ left: pos.left, top: pos.top }}
         >
           <ul className="max-h-72 overflow-auto py-1">
@@ -500,20 +500,22 @@ export default function MentionBox() {
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={() => insertAirport(a)}
                     className={[
-                      "w-full px-3.5 py-3 text-left transition-colors",
-                      active ? "bg-sky-50/90" : "bg-white",
+                      "w-full px-3.5 py-3 text-left transition-colors duration-150",
+                      active
+                        ? "bg-sky-50/90"
+                        : "bg-white",
                       "hover:bg-slate-50 focus:outline-none",
                     ].join(" ")}
                   >
                     <div className="flex items-start gap-2">
-                      <span className="text-[15px] font-semibold leading-5 text-slate-900">
+                      <span className="text-[15px] font-semibold leading-5 text-slate-900 transition-colors duration-200">
                         {a.name}
                       </span>
-                      <span className="mt-0.5 rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                      <span className="mt-0.5 rounded-md bg-slate-100 px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500 transition-colors duration-200">
                         {a.iata}
                       </span>
                     </div>
-                    <div className="mt-1 text-xs text-slate-500">
+                    <div className="mt-1 text-xs text-slate-500 transition-colors duration-200">
                       {[a.city, a.country].filter(Boolean).join(", ")}
                     </div>
                   </button>
