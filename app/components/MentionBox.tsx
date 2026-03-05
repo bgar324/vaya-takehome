@@ -256,7 +256,7 @@ export default function MentionBox() {
 
     setPos({
       left: Math.max(0, offsetLeft + clampedLeft),
-      top: Math.max(0, offsetTop + top + lineHeight + 10),
+      top: Math.max(0, offsetTop + top + lineHeight),
     });
   }, [cursor, value, open]);
 
